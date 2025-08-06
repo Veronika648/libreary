@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import *
 from search import*
 
 
+
 app = QApplication([])
 window = QWidget()
 
@@ -23,5 +24,9 @@ mainline.addLayout(v1)
 window.setLayout(mainline)
 
 search_btn.clicked.connect(search_window)
+
+def open_window():
+    search_window(name_input.text())
+
 window.show()
 app.exec()
