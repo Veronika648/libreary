@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import *
 from search import*
-
+import requests
 
 
 app = QApplication([])
