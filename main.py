@@ -4,13 +4,30 @@ import requests
 
 
 app = QApplication([])
+app.setStyleSheet("""
+        QPushButton
+        {
+            border-style: groove;
+            border-width: 5px;
+            background-color: #735fff;
+            border-color: #7500ff;
+            border-radius: 7px;
+            color: white;
+            }
+            
+        QWidget
+        {
+            background: #9e6fff;
+            }
+        """)
+
 window = QWidget()
 
 mainline = QHBoxLayout()
 v1 = QVBoxLayout()
 
 
-name_lbl = QLabel("Введіть назву або автора книги")
+name_lbl = QLabel("Введіть назву або автора книг")
 name_input = QLineEdit()
 
 search_btn = QPushButton('Пошук')
@@ -23,10 +40,11 @@ mainline.addLayout(v1)
 mainline.addLayout(v1)
 window.setLayout(mainline)
 
-search_btn.clicked.connect(search_window)
+
 
 def open_window():
+    print(name_input.text())
     search_window(name_input.text())
-
+search_btn.clicked.connect(open_window)
 window.show()
 app.exec()
