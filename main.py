@@ -5,6 +5,11 @@ import requests
 
 app = QApplication([])
 app.setStyleSheet("""
+                  
+        QWidget
+        {
+            background: #9e6fff;
+        }
         QPushButton
         {
             border-style: groove;
@@ -15,10 +20,20 @@ app.setStyleSheet("""
             color: white;
             }
             
-        QWidget
-        {
-            background: #9e6fff;
-            }
+        QLineEdit{
+            border-style: groove;
+            border-width: 2px;
+            background-color: #735fff;
+            border-radius: 7px;
+              }
+                  
+        QTextEdit{
+            border-style: groove;
+            border-width: 2px;
+            background-color: #735fff;
+            border-radius: 7px;
+                }
+
         """)
 
 window = QWidget()
